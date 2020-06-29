@@ -13,4 +13,4 @@ Adeept is a technical service team of open source software and hardware. Dedicat
 
 ## Documentation
 
-[Installing Raspberry Pi OS](../documentation/installing_raspbian.md)
+[Installing Raspberry Pi OS](documentation/installing_raspbian.md)
