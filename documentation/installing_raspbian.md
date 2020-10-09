@@ -29,4 +29,19 @@ network={
 }
 ```
 
-## Todo setup fixed IP address via CLI ##
+## Setup fixed IP address via CLI ##
+
+1. As per Rasbian Setup above, open the boot volume on your Windows/Mac/Linux desktop
+
+1. Edit the file `cmdline.txt` and append (at the end) ` ip=192.168.0.252` where that is the IP address you want the Picar-B to respond from
+
+1. Boot up the Picar, and  in a terminal `ssh pi@192.168.0.252` and then `sudo nano /etc/dhcpcd.conf` and uncomment the Example static IP configuration, e.g.
+
+  a. Set the static_ip_address to the address you want, and the static routers and static domain_name_servers to the address of your broadband / office router.  You can also add other DNS servers e.g. 8.8.8.8.  I don't recommend setting a static ip6_address unless you know what you are doing.
+
+  a. `interface eth0
+     static ip_address=192.168.0.252/24
+     #static ip6_address=fd51:42f8:caae:d92e::ff/64
+     static routers=192.168.0.1
+     static domain_name_servers=192.168.0.1 8.8.8.8`
+
